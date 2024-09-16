@@ -11,3 +11,4 @@ streamlit
 numpy
 pandas
 tqdm
+flask
