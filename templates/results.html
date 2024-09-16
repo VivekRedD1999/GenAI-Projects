@@ -1,0 +1,38 @@
+<!-- templates/results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - English Video Search Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Search Results</h1>
+        <p>Your query: <strong>{{ query }}</strong></p>
+        {% if results %}
+            {% for segment in results %}
+                <div class="result">
+                    <h2>{{ segment }}</h2>
+                    <div class="video-thumbnail">
+                        <img src="{{ url_for('thumbnail', segment_name=segment) }}" alt="Thumbnail for {{ segment }}" width="300">
+                    </div>
+                    <div class="video-player">
+                        <video width="600" controls>
+                            <source src="{{ url_for('video', segment_name=segment) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        {% else %}
+            <p>No results found for your query.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}">🔙 Back to Search</a>
+    </div>
+</body>
+</html>

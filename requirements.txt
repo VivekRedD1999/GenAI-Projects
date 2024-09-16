@@ -1,0 +1,13 @@
+torch
+transformers
+sentence-transformers
+torchvision
+librosa
+pydub
+moviepy
+Pillow
+faiss-cpu
+streamlit
+numpy
+pandas
+tqdm
