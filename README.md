@@ -1,4 +1,4 @@
-# LAVILA-Powered Video Segment Search Application
+# Video Segment Search with FAISS and Transformers
 
 ## Description
 A Flask-based application that utilizes FAISS for efficient searching of relevant video segments based on user queries. The system processes and indexes video segments, allowing users to retrieve and view the most pertinent segments seamlessly.
